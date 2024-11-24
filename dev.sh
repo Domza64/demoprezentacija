@@ -4,7 +4,7 @@
 FILE_TO_MONITOR="./prezentacija.md"
 
 # Command to execute when the file changes
-COMMAND_TO_RUN="pandoc -s -t revealjs -o docs/prezentacija.html prezentacija.md"
+COMMAND_TO_RUN="pandoc -s -t revealjs -o docs/index.html prezentacija.md"
 
 # Check if inotifywait is installed
 if ! command -v inotifywait &> /dev/null; then
