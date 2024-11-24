@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Dominik Juričić">
+  <title>Vim</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Vim</h1>
+  <p class="author">Dominik Juričić</p>
+  <p class="date">21. November 2024</p>
+</section>
+
+<section>
+<section id="vim" class="title-slide slide level1">
+<h1>Vim</h1>
+
+</section>
+<section id="tekstualni-editor-za-prave-profesionalce"
+class="slide level2">
+<h2>Tekstualni editor za prave profesionalce</h2>
+<p><em>Samo kukavice koriste nano</em></p>
+<figure>
+<img data-src="slike/Vim_logo.jpg" alt="Vim logo" />
+<figcaption aria-hidden="true">Vim logo</figcaption>
+</figure>
+</section>
+<section id="što-je-vim" class="slide level2">
+<h2>Što je Vim?</h2>
+<p>Vim (Vi IMproved) je napredni tekstualni editor koji se koristi za
+uređivanje tekstualnih datoteka direktno u terminalu.</p>
+</section>
+<section id="zašto-je-alat-važan-za-it-stručnjake" class="slide level2">
+<h2>Zašto je alat važan za IT stručnjake?</h2>
+<ul>
+<li><strong>Efikasnost:</strong> Nakon samo nekoliko godina vježbe; kad
+ga svladate, omogućava vrlo brzo uređivanje tekstualnih datoteka.</li>
+<li><strong>Dostupnost:</strong> Vim je instaliran na gotovo svim Linux
+distribucijama, što ga čini nezamjenjivim za čak 5% desktop
+računala.</li>
+</ul>
+</section></section>
+<section>
+<section id="glavne-značajke" class="title-slide slide level1">
+<h1>Glavne značajke</h1>
+
+</section>
+<section id="neke-od-najvaznijih-značajki" class="slide level2">
+<h2>Neke od najvaznijih značajki:</h2>
+<ul>
+<li>📐 <strong>Prilagodljivost:</strong> Omogućava detaljno podešavanje
+rada putem konfiguracijskih datoteka i dodataka.</li>
+<li>🔒 <strong>“Nemogućnost izlaska”</strong> (za početnike)</li>
+<li>⚡ <strong>Brzina rada:</strong> Efikasno uređivanje teksta s
+tipkovničkim prečacima bez potrebe za korištenjem miša.</li>
+</ul>
+</section>
+<section id="prilagodljivost" class="slide level2">
+<h2>Prilagodljivost</h2>
+<ul>
+<li>Vim ima gotovo beskonačne mogućnosti za prilagodbu, omogućujući
+korisnicima da ga u potpunosti prilagode svojim potrebama putem skripti,
+dodataka i postavki.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Primjer vanilla Vim sucelja <img data-src="slike/Vim_sucelje.png"
+alt="Vim Sučelje" /></p>
+</section>
+<section class="slide level2">
+
+<p>Primjer uredenog NeoVim (moderna verzija Vima) sucelja <img
+data-src="slike/neovim.png" alt="NeoVim sucelje" /></p>
+</section>
+<section id="nemogućnost-izlaska-iz-programa" class="slide level2">
+<h2>Nemogućnost izlaska iz programa</h2>
+<ul>
+<li>Početnici često zaglave u Vimu danima, dok na kraju, uz puno sreće i
+traganja po internetu, ne shvate kako izaći</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="slike/vim_meme.jpg" alt="Vim meme" />
+<figcaption aria-hidden="true">Vim meme</figcaption>
+</figure>
+</section>
+<section id="kako-izaći-iz-vima" class="slide level2">
+<h2>Kako izaći iz Vima?</h2>
+<iframe width="1908" height="743" src="https://www.youtube.com/embed/O9GvcYgYBRA" title="Exit Vim - Three ways to quit vim including with and without saving" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+</section></section>
+<section>
+<section id="kako-instalirati-vim" class="title-slide slide level1">
+<h1>Kako instalirati Vim</h1>
+
+</section>
+<section id="linux" class="slide level2">
+<h2>Linux</h2>
+<p>Više-manje svaka Linux distribucija u svom standardnom repozitoriju
+sadrži <code>vim</code> paket. Dovoljno je samo pokrenuti komandu:
+<code>apt install vim</code> za distribucije bazirane na Debian
+Linuxu.</p>
+</section>
+<section id="microsoft-windows" class="slide level2">
+<h2>Microsoft Windows</h2>
+<p>Ovo je malo kompleksniji proces za koji ce vam najviše pomoči Bill
+Gates.</p>
+</section></section>
+<section>
+<section id="kako-koristiti-vim" class="title-slide slide level1">
+<h1>Kako koristiti Vim</h1>
+
+</section>
+<section id="modovi-rada" class="slide level2">
+<h2>Modovi rada:</h2>
+<ol type="1">
+<li><strong>Normalni mod:</strong> Kretanje kroz tekst, brisanje,
+kopiranje i pretraga.</li>
+<li><strong>Insert mod:</strong> Unos novog teksta.</li>
+<li><strong>Visual mod:</strong> Selekcija teksta za uređivanje.</li>
+<li><strong>Command mod:</strong> Izvršavanje naredbi poput spremanja i
+izlaska.</li>
+</ol>
+</section>
+<section id="osnovne-komande-i-primjeri-korištenja"
+class="slide level2">
+<h2>Osnovne komande i primjeri korištenja:</h2>
+</section>
+<section id="uređivanje-datoteke" class="slide level2">
+<h2>1. <strong>Uređivanje datoteke:</strong></h2>
+<ul>
+<li>Otvorite datoteku:<br />
+<code>vim datoteka.txt</code></li>
+<li>Prebacivanje u <strong>Insert mod</strong> za unos teksta:<br />
+Pritisnite <code>i</code> da počnete unositi tekst.</li>
+<li><strong>Spremanje</strong> datoteke:<br />
+U <strong>Command mod</strong> pritisnite <code>:w</code>.</li>
+<li><strong>Izlazak</strong> iz Vim-a:<br />
+U <strong>Command mod</strong> pritisnite <code>:q</code>.</li>
+</ul>
+</section>
+<section id="rad-s-tekstom" class="slide level2">
+<h2>2. <strong>Rad s tekstom:</strong></h2>
+<ul>
+<li>Prebacivanje u <strong>Insert mod</strong>:<br />
+Pritisnite <code>i</code> za unos teksta na trenutnom kursoru ili
+<code>a</code> da počnete unos nakon kursora.</li>
+<li><strong>Brisanje riječi</strong>:<br />
+Pritisnite <code>d</code> pa zatim <code>w</code> da obrišete trenutnu
+riječ.</li>
+<li><strong>Kopiranje linije</strong>:<br />
+Pritisnite <code>yy</code> za kopiranje trenutne linije.</li>
+<li><strong>Zalijepi kopirani tekst</strong>:<br />
+Pritisnite <code>p</code> da zalijepite tekst nakon kursora.</li>
+</ul>
+</section></section>
+<section>
+<section id="prednosti-i-nedostatci" class="title-slide slide level1">
+<h1>Prednosti i nedostatci</h1>
+
+</section>
+<section id="prednosti" class="slide level2">
+<h2>Prednosti:</h2>
+<ul>
+<li><strong>Brzina i produktivnost:</strong> Brzi rad s tekstom uz
+korištenje tipkovničkih prečaca.</li>
+<li><strong>Lagana aplikacija:</strong> Radi na svim platformama i
+koristi minimalne resurse.</li>
+<li><strong>Prilagodljivost:</strong> Mogućnost prilagodbe putem
+<code>.vimrc</code> konfiguracije i dodataka.</li>
+<li><strong>Dostupnost:</strong> Dolazi predinstaliran na većini
+Unix/Linux sustava.</li>
+</ul>
+</section>
+<section id="nedostaci" class="slide level2">
+<h2>Nedostaci:</h2>
+<ul>
+<li><strong>Strma krivulja učenja:</strong> Zahtijeva vrijeme i praksu
+kako bi se ovladalo osnovama.</li>
+<li><strong>Manjak modernog sučelja:</strong> Bazira se na terminalu,
+što može biti neintuitivno za nove korisnike.</li>
+<li><strong>Ovisnost o dodatcima:</strong> Naprednije funkcionalnosti
+često zahtijevaju instalaciju dodataka.</li>
+</ul>
+</section>
+<section id="zaključak" class="slide level2">
+<h2>Zaključak:</h2>
+<p>Vim je moćan alat za korisnike koji su spremni uložiti vrijeme u
+njegovo savladavanje. Idealan je za one koji traže brzinu,
+prilagodljivost i minimalistički alat za uređivanje teksta. Međutim,
+početnicima može biti izazovan zbog svoje složenosti i terminalskog
+sučelja.</p>
+</section></section>
+<section>
+<section id="kraj" class="title-slide slide level1">
+<h1>Kraj</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Hvala na paznji!</p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Vim Docs: <a href="https://www.vim.org/docs.php">Vim docs</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
